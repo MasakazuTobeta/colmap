@@ -459,7 +459,7 @@ int RunPointTriangulator(int argc, char** argv) {
 
     const size_t num_observations = reconstruction.ComputeNumObservations();
 
-    PrintHeading1("Bundle adjustment");
+    PrintHeading1("L462: Bundle adjustment");
     BundleAdjuster bundle_adjuster(ba_options, ba_config);
     CHECK(bundle_adjuster.Solve(&reconstruction));
 
@@ -694,7 +694,7 @@ int RunRigBundleAdjuster(int argc, char** argv) {
     }
   }
 
-  PrintHeading1("Rig bundle adjustment");
+  PrintHeading1("L697: Rig bundle adjustment");
 
   BundleAdjustmentOptions ba_options = *options.bundle_adjustment;
   ba_options.solver_options.minimizer_progress_to_stdout = true;

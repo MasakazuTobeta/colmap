@@ -632,6 +632,7 @@ IncrementalMapper::AdjustLocalBundle(
     }
 
     // Adjust the local bundle.
+    PrintHeading1("[Debug] Adjust the local bundle");
     BundleAdjuster bundle_adjuster(ba_options, ba_config);
     bundle_adjuster.Solve(reconstruction_);
 
@@ -704,6 +705,7 @@ bool IncrementalMapper::AdjustGlobalBundle(
   }
 
   // Run bundle adjustment.
+  PrintHeading1("[Debug] Run AdjustGlobalBundle adjustment");
   BundleAdjuster bundle_adjuster(ba_options, ba_config);
   if (!bundle_adjuster.Solve(reconstruction_)) {
     return false;
@@ -736,6 +738,7 @@ bool IncrementalMapper::AdjustParallelGlobalBundle(
   }
 
   // Run bundle adjustment.
+  PrintHeading1("[Debug] Run AdjustParallelGlobalBundle adjustment");
   ParallelBundleAdjuster bundle_adjuster(parallel_ba_options, ba_options,
                                          ba_config);
   if (!bundle_adjuster.Solve(reconstruction_)) {
